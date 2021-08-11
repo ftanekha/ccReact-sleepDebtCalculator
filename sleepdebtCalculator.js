@@ -25,7 +25,7 @@ function getSleepHours(day){
 //get the total sleep hours that you actually slept
 function getActualSleepHours(){
     let hoursSlept = []
-    let daysOfWeek = [
+    const daysOfWeek = [
         'monday', 'tuesday', 'wednesday', 'thursday',
         'friday', 'saturday', 'sunday'
     ]
@@ -38,6 +38,27 @@ function getActualSleepHours(){
     return totalHoursSlept
 }
 
+//get the ideal sleep hours that you prefer
+function getIdealSleepHours(){
+    //per night/day
+    const idealHours = 8
+    //per week
+    return idealHours * 7
+}
+
+//calculate sleep debt
+function calculateSleepDebt(){
+    const actualSleepHours = getActualSleepHours(),
+    idealSleepHours = getIdealSleepHours()
+
+    if(actualSleepHours === idealSleepHours){
+        return 'Congrats, you got the perfect amount of sleep :)'
+    }else if(actualSleepHours > idealSleepHours){
+        return 'Looks like you got more sleep than needed!'
+    }else{
+        return 'You should get some rest!!'
+    }
+}
 
 //test code 
-console.log(getActualSleepHours()) //46.5hrs !
+console.log(calculateSleepDebt()) //You should get some rest!!
