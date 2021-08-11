@@ -50,15 +50,15 @@ function getIdealSleepHours(){
 function calculateSleepDebt(){
     const actualSleepHours = getActualSleepHours(),
     idealSleepHours = getIdealSleepHours()
-
+    //make the program more interactive & informative by including the actual hours of sleep
     if(actualSleepHours === idealSleepHours){
-        return 'Congrats, you got the perfect amount of sleep :)'
+        return `WOW ${actualSleepHours} hours!, you got the perfect amount of sleep :)`
     }else if(actualSleepHours > idealSleepHours){
-        return 'Looks like you got more sleep than needed!'
+        return `${actualSleepHours} hours, it looks like you got more sleep than needed!`
     }else{
-        return 'You should get some rest!!'
+        return `${actualSleepHours} hours :(( You should get some rest!!`
     }
 }
 
 //test code 
-console.log(calculateSleepDebt()) //You should get some rest!!
+console.log(calculateSleepDebt()) //46.5 hours :(( You should get some rest!!
