@@ -25,7 +25,8 @@
 //get the total sleep hours that you actually slept
 function getActualSleepHours(a = 5.5, b = 5.5, c = 5.5, d = 6, e = 7, f = 8.5, g = 8){
     //check that hours are valid
-    for(let hours of [a,b,c,d,e,f,g]) if(hours === null || hours === undefined || hours === '' || hours < 0 || hours > 24) {
+    for(let hours of [a,b,c,d,e,f,g]) if(hours === null || hours === undefined || hours === '' || hours < 0 || hours > 24) 
+{
         return 'one or more of the hours input are incorrect, please try again'
     }
 
@@ -33,11 +34,10 @@ function getActualSleepHours(a = 5.5, b = 5.5, c = 5.5, d = 6, e = 7, f = 8.5, g
 }
 
 //get the ideal sleep hours that you prefer
-function getIdealSleepHours(){
-    //per night/day
-    const idealHours = 8
-    //per week
-    return idealHours * 7
+//Some people need to sleep longer than others. 
+//pass an argument to getIdealSleepHours(idealHoursPerDay) where idealHoursPerDay is the ideal/prefered hours per night
+function getIdealSleepHours(idealHoursPerDay = 3){
+    return idealHoursPerDay * 7
 }
 
 //calculate sleep debt
@@ -55,4 +55,4 @@ function calculateSleepDebt(){
 }
 
 //test code 
-console.log(calculateSleepDebt()) //46.5 hours :(( You should get some rest!!
+console.log(calculateSleepDebt()) //46 hours, it looks like you got more sleep than needed!
