@@ -21,5 +21,23 @@ function getSleepHours(day){
             return 'day unrecongnized!'
     }
 }
+
+//get the total sleep hours that you actually slept
+function getActualSleepHours(){
+    let hoursSlept = []
+    let daysOfWeek = [
+        'monday', 'tuesday', 'wednesday', 'thursday',
+        'friday', 'saturday', 'sunday'
+    ]
+
+    for(let day of daysOfWeek) hoursSlept.push(getSleepHours(day))
+    //sum up the hours
+    const totalHoursSlept = hoursSlept.reduce(
+        (day, nextDay) => day + nextDay 
+    )
+    return totalHoursSlept
+}
+
+
 //test code 
-console.log(getSleepHours('FriDaY'))
+console.log(getActualSleepHours()) //46.5hrs !
